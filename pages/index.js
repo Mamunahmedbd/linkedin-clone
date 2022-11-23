@@ -69,8 +69,8 @@ export async function getServerSideProps(context) {
     };
   }
   // Get posts on SSR in index file with api handler
-  const posts = await fetch("http://localhost:3000/api/posts").then((res) =>
-    res.json()
+  const posts = await fetch(`${process.env.NEXTAUTH_URI}/api/posts`).then(
+    (res) => res.json()
   );
   // Get posts on SSR in index file without api handler
   // const { db } = await connectToDatabase();
